@@ -17,6 +17,6 @@ runcmd:
   - systemctl enable mongod
   - cd /home/yc-user && sudo -u yc-user git clone -b monolith https://github.com/express42/reddit.git
   - cd reddit && sudo -u yc-user bundle install && sudo -u yc-user puma -d
-#bootcmd:
+bootcmd:
   - cd /home/yc-user/reddit
   - sudo -u yc-user puma -d
