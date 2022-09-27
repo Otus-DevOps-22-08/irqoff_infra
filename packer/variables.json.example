@@ -1,5 +1,5 @@
 {
     "yandex_folder_id": "123",
     "yandex_source_image_family": "ubuntu-1604-lts",
-    "yandex_service_account_key_file": "/tmp/key"
+    "yandex_service_account_key_file": ""
 }
