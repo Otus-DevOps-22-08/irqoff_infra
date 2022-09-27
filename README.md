@@ -29,5 +29,8 @@ yc compute instance create \
   --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB \
   --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 \
   --metadata serial-port-enable=1 \
-  --metadata-from-file user-data=user-data.yml \
+  --metadata-from-file user-data=user-data.yml
 ```
+
+## Homework 07
+Create [a script](./config-scripts/create-reddit-vm.sh) that create a VM with backed image that I build by Packer.

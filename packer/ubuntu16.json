@@ -1,0 +1,32 @@
+{
+  "variables": {
+    "yandex_folder_id": "env `PKR_VAR_yandex_folder_id`",
+    "yandex_source_image_family": "env `PKR_VAR_yandex_source_image_family`",
+    "yandex_service_account_key_file": "env `PRK_VAR_yandex_service_account_key_file`"
+  },
+    "builders": [
+        {
+            "type": "yandex",
+            "service_account_key_file": "{{user `yandex_service_account_key_file`}}",
+            "folder_id": "{{user `yandex_folder_id`}}",
+            "source_image_family": "{{user `yandex_source_image_family`}}",
+            "image_name": "reddit-base-{{timestamp}}",
+            "image_family": "reddit-base",
+            "ssh_username": "ubuntu",
+            "platform_id": "standard-v1",
+            "use_ipv4_nat": true
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "scripts/install_ruby.sh",
+            "execute_command": "sudo {{.Path}}"
+        },
+        {
+            "type": "shell",
+            "script": "scripts/install_mongodb.sh",
+            "execute_command": "sudo {{.Path}}"
+        }
+    ]
+}
