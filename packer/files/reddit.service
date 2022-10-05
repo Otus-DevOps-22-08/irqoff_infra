@@ -1,0 +1,13 @@
+[Unit]
+Description=Reddit monolith
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/appuser/reddit
+ExecStart=/usr/local/bin/puma
+User=appuser
+Group=appuser
+
+[Install]
+WantedBy=multi-user.target
